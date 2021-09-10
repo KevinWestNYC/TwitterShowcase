@@ -1,17 +1,9 @@
-/* .App {
-  text-align: center;
-} */
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
+#app-body {
+  height: 1100px;
+  width: 100%;
+  background-image: url("./images/49ersstadium.jpg");
+  /* opacity: 0.6; */
+}
 
 #main-title{
   color:white;
@@ -44,14 +36,15 @@
   font-family: 'Permanent Marker', cursive;
 }
 
-.App {
-  /* Background pattern from Toptal Subtle Patterns */
-  height: 1100px;
-  width: 100%;
-  background-image: url("./images/49ersstadium.jpg");
+#home-body p{
+  font-family: 'Archivo Black', sans-serif;
+  color:white;
+  font-size: 30px;
+  
 }
 
 #home-container{
+  font-family: 'Archivo Black', sans-serif;
   margin-top: 49px;
   text-align: center;
 }
@@ -62,7 +55,29 @@
   font-size: 20px;
 }
 
-/* font-family: 'Bangers', cursive;
-font-family: 'Bungee Inline', cursive;
-font-family: 'Pacifico', cursive;
+#tweet-card{
+  background-color: white;
+  font-family:'twitterfont';
+  font-size: 15px;
+  /* color:gray; */
+}
+
+#twitter-name{
+  font-weight: bold;
+}
+
+.grey{
+  color:grey;
+}
+.icon{
+  margin-right:40px;
+  color:gray;
+  font-family:'twitterfont';
+}
+
+@font-face {
+  font-family:'twitterfont';
+  src: url(./fonts/twitterfont.woff) format('woff');
+}
+/* font-family: 'Archivo Black', sans-serif;
 font-family: 'Permanent Marker', cursive; */
