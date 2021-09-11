@@ -29,6 +29,7 @@
   font-size: 35px;
   font-family: 'Permanent Marker', cursive;
 }
+
 .nav-bar-link-text:hover{
   color:RGB(170, 0, 0);
   text-decoration:"none";
@@ -55,25 +56,69 @@
   font-size: 20px;
 }
 
+ul{
+  list-style-type: none;  
+}
+
+#tweet-column{
+  position:relative;
+}
+
+#schedule-column{
+  position:relative;
+  padding-left: 50px;
+}
+
+#stat-column{
+  position:relative;
+  padding-left: 30px;
+}
+
+
 #tweet-card{
   background-color: white;
   font-family:'twitterfont';
   font-size: 15px;
-  /* color:gray; */
+}
+
+#tweet-body{
+  padding-top: 10px;
+}
+
+#profile-photo{
+  padding: 10px
 }
 
 #twitter-name{
+  margin-bottom:-13px;
+}
+
+#bold-name{
   font-weight: bold;
 }
 
 .grey{
   color:grey;
 }
+
 .icon{
-  margin-right:40px;
+  margin-right:50px;
   color:gray;
   font-family:'twitterfont';
+  font-size: 13px;
 }
+
+.icon-image{
+  padding-right: 9px;
+  padding-bottom: 4px;
+}
+
+/* #icon-bar{
+  display: inline;
+  align-items: center;
+} */
+
+
 
 @font-face {
   font-family:'twitterfont';

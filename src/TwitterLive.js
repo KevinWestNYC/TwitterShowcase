@@ -8,14 +8,14 @@ import TweetCard from './components/TweetCard';
 
 export default function TwitterLive() {
     return (
-        <div className="contanier">
+        <div className="container-fluid">
             <h1 className="page-title">Live</h1>
             <div className="row">
-                <div className="col-3">
+                <div id="schedule-column" className="col-4">
                     <h2>Schedule</h2>
                     <img src={ninersSched} />
                 </div>
-                <div className="col-5">
+                <div id="tweet-column" className="col-5">
                     <h2>Tweets</h2>
                     <ul>
                         <li>
@@ -32,7 +32,7 @@ export default function TwitterLive() {
                         </li>
                     </ul>
                 </div>
-                <div className="col-3">
+                <div id="stat-column" className="col-3">
                     <h2>Game Stats</h2>
                 </div>
             </div>
