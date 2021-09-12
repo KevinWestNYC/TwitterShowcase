@@ -118,6 +118,31 @@ ul{
   align-items: center;
 } */
 
+.account-list{
+  font-family:'twitterfont';
+  background-color: white;
+  padding:20px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+
+.account-list-name{
+  border: solid 1px;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.button{
+  display: flex;
+  justify-content: left;
+  margin-bottom: -24px;
+  border:1px solid white;
+  border-radius: 5px;
+  background-color: white;
+  padding:-10px;
+}
+
 
 
 @font-face {

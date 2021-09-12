@@ -6,6 +6,7 @@ import verified from './twitterverified.jpg'
 
 export default function TweetCard() {
     return (
+        //clicking the tweet will send you to tweet on twitter site 
         <div className="container">
             <div id="tweet-card" className="row" >
                 <div className="col-1">

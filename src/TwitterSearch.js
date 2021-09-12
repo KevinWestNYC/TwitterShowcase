@@ -1,28 +1,20 @@
-import React from 'react'
+import React from 'react';
+import FollowedAccountList from './components/FollowedAccountList';
+import AccountSearchBar from './components/AccountSearchBar';
 
 export default function TwitterSearch() {
     return (
         <div className="container" >
             <h1 className="page-title">Search</h1>
             <div className="row">
-                <div className="col-4">
+                <div className="col-3">
                     <h2>My Stream</h2>
-                    <ul>
-                        <li>@mattbarrows x</li>
-                        <li>@49erswebzone x</li>
-                        <li>@grantcohn x</li>
-                        <li>@LombardiHimself x</li>
-                        <li>@NBCS49ers x</li>
-                        <li>@MaioccoNBCS x</li>
-                        <li>@Eric_Branch x</li>
-                        <li>@CamInman x</li>
-                        <li>@TheNinersWire x</li>
-                    </ul>
+                    <FollowedAccountList />
                 </div>
                 <div className="col-6">
                     <div className="row">
                         <p>Search by name, content or hashtag</p>
-                        <input></input>
+                        <AccountSearchBar />
                     </div>
                     <br />
                     <div className="row">
