@@ -1,7 +1,8 @@
 #app-body {
-  height: 1100px;
+  height: 1050px;
   width: 100%;
   background-image: url("./images/49ersstadium.jpg");
+  background-blend-mode: overlay;
   /* opacity: 0.6; */
 }
 
