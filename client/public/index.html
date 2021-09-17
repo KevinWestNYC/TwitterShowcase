@@ -44,5 +44,24 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js" 
+    integrity="sha512-WL6WGKMPBiM9PnHRYIn5YEtq0Z8XP4fkVb4qy7PP4vhmYQErJ/dySyXuFIMDf1eEYCXCrQrMJfkNwKc9gsjTjA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+      export function getTweetInfo(){
+      
+      const socket = io();
+
+      const tweets = []
+      socket.on('connect', () => {
+        console.log('Connected to server ...')
+      })
+
+      socket.on('tweet', (tweet) => {
+        console.log(tweet)
+      })
+    }
+    </script>
   </body>
 </html>

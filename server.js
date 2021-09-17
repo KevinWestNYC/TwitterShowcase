@@ -2,8 +2,10 @@ const express = require('express');
 const path = require('path')
 const http = require('http')
 const socketIo = require('socket.io')
+const needle = require('needle')
 const PORT = process.env.PORT || 3000;
 const config = require("dotenv").config();
+const TOKEN = process.env.BEARER_TOKEN
 
 const app = express();
 const server = http.createServer(app)
@@ -11,12 +13,14 @@ const io = socketIo(server)
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
-app.listen(PORT, () => console.log(`Server is listening on port: ${PORT}`));
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../', 'client', 'public', 'index.html'))
+})
 
 // Open a realtime stream of Tweets, filtered according to rules
 // https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/quick-start
 
-const needle = require('needle');
+
 
 // The code below sets the bearer token from your environment variables
 // To set environment variables on macOS or Linux, run the export command below from the terminal:
@@ -102,7 +106,7 @@ async function setRules() {
 
 }
 
-function streamConnect(retryAttempt) {
+function streamConnect(socket) {
 
     const stream = needle.get(streamURL, {
         headers: {
@@ -115,7 +119,8 @@ function streamConnect(retryAttempt) {
     stream.on('data', data => {
         try {
             const json = JSON.parse(data);
-            console.log(json);
+            // console.log(json);
+            socket.emit('tweet', json)
             // A successful connection resets retry count.
             retryAttempt = 0;
         } catch (e) {
@@ -146,7 +151,9 @@ function streamConnect(retryAttempt) {
 }
 
 
-(async () => {
+io.on('connection', async () => {
+    console.log('Client connected...')
+
     let currentRules;
 
     try {
@@ -165,5 +172,8 @@ function streamConnect(retryAttempt) {
     }
 
     // Listen to the stream.
-    streamConnect(0);
-})();
+    streamConnect(io);
+})
+
+
+server.listen(PORT, () => console.log(`Server is listening on port: ${PORT}`));
